@@ -6,6 +6,11 @@
     <title>Login - Kerala Food Hub</title>
     <link rel="stylesheet" href="styles1.css">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
             background-image: url('background.jpg');
             background-size: cover;
@@ -15,23 +20,25 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            margin: 0;
             font-family: 'Poppins', sans-serif;
             color: white;
+            padding: 20px;
         }
         .login-container {
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(0, 0, 0, 0.7);
             padding: 30px;
             border-radius: 15px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             text-align: center;
-            width: 350px;
+            width: 100%;
+            max-width: 400px;
             backdrop-filter: blur(10px);
         }
         .login-container h2 {
             margin-bottom: 20px;
+            font-size: 1.8rem;
         }
-        .phone-input, .password-input {
+        .input-group {
             display: flex;
             align-items: center;
             width: 100%;
@@ -40,7 +47,7 @@
             padding: 12px;
             margin: 10px 0;
         }
-        .phone-input select, .phone-input input, .password-input input {
+        .input-group input, .input-group select {
             border: none;
             background: transparent;
             color: white;
@@ -48,19 +55,13 @@
             flex: 1;
             outline: none;
         }
-        .phone-input select {
-            border-radius: 8px 0 0 8px;
-        }
-        .password-input input {
-            border-radius: 8px;
+        .input-group input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
         }
         .password-toggle {
             cursor: pointer;
             margin-left: 10px;
             font-size: 18px;
-        }
-        .login-container input::placeholder {
-            color: rgba(255, 255, 255, 0.7);
         }
         .login-container button {
             width: 100%;
@@ -86,19 +87,33 @@
         .login-container a:hover {
             text-decoration: underline;
         }
+
+        /* Responsive Design */
+        @media (max-width: 500px) {
+            .login-container {
+                padding: 20px;
+                width: 90%;
+            }
+            .login-container h2 {
+                font-size: 1.5rem;
+            }
+            .input-group {
+                padding: 10px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="login-container">
         <h2>Login to Kerala Food Hub</h2>
         <form onsubmit="redirectToHome(event)">
-            <div class="phone-input">
+            <div class="input-group">
                 <select disabled>
                     <option value="+91">+91 🇮🇳</option>
                 </select>
                 <input type="tel" name="phone" placeholder="Phone Number" required pattern="[0-9]{10}" title="Enter a valid 10-digit phone number">
             </div>
-            <div class="password-input">
+            <div class="input-group">
                 <input type="password" id="password" name="password" placeholder="Password" required>
                 <span class="password-toggle" onclick="togglePassword()">👁️</span>
             </div>
