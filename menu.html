@@ -1,31 +1,4 @@
-/* index.html (Login Page) */
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Kerala Food Hub</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="login-container">
-        <h2>Login to Kerala Food Hub</h2>
-        <form onsubmit="redirectToHome(event)">
-            <input type="tel" name="phone" placeholder="Phone Number" required pattern="[0-9]{10}">
-            <input type="password" id="password" name="password" placeholder="Password" required>
-            <button type="submit">Login</button>
-        </form>
-        <a href="#">Forgot Password?</a>
-        <a href="register.html">Create an Account</a>
-    </div>
-    <script>
-        function redirectToHome(event) {
-            event.preventDefault();
-            window.location.href = 'home.html';
-        }
-    </script>
-</body>
-</html>
+
 
 
 /* home.html (Main Page) */
